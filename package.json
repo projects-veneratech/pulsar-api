@@ -1,6 +1,6 @@
 {
   "name": "pulsar-api",
-  "version": "Beta",
+  "version": "1.0.0",
   "description": "QC your content in AWS Cloud S3 with Pulsar Cloud Service# API",
   "main": "src/index.js",
   "scripts": {
