@@ -19,13 +19,13 @@ The public url of the media content stored in AWS S3 storage when posted, the pu
 ```javascript
 var PulsarApi = require('pulsar-api');
 
-var apiInstance = new PulsarApi.CreateJobApi()
+var apiInstance = new PulsarApi.CreateJobApi();
 
-var accountId = 56; // {Integer} Pulsar Cloud - Account ID of the user
+var accountId = 56; // Integer | Pulsar Cloud - Account ID of the user
 
-var apiKey = "apiKey_example"; // {String} Pulsar Cloud - API KEY of the user
+var apiKey = "apiKey_example"; // String | Pulsar Cloud - API KEY of the user
 
-var jobdata = new PulsarApi.Jobdata(); // {Jobdata} Body parameters structure.
+var jobdata = new PulsarApi.Jobdata(); // Jobdata | Body parameters structure.
 
 
 var callback = function(error, data, response) {
@@ -35,14 +35,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createJob(accountId, apiKey, jobdata, callback);
+apiInstance.createJob(accountId, apiKey, jobdata, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | [**Integer**](.md)| Pulsar Cloud - Account ID of the user | 
+ **accountId** | **Integer**| Pulsar Cloud - Account ID of the user | 
  **apiKey** | **String**| Pulsar Cloud - API KEY of the user | 
  **jobdata** | [**Jobdata**](Jobdata.md)| Body parameters structure. | 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json

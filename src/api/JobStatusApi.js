@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/JobStatus'], factory);
+    define(['ApiClient', 'model/JobStatus'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('../model/JobStatus'));
@@ -18,15 +18,15 @@
   /**
    * JobStatus service.
    * @module api/JobStatusApi
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
    * Constructs a new JobStatusApi. 
    * @alias module:api/JobStatusApi
    * @class
-   * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
-   * if unspecified.
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;

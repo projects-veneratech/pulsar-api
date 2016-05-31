@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jobid** | **String** |  | 
 **code** | **Integer** |  | 
+**jobid** | **String** |  | 
 **message** | **String** |  | 
 
 

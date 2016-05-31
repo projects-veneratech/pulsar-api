@@ -1,7 +1,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['./ApiClient', './model/CancelJobResponse', './model/CancelJobResponseData', './model/CreateJobResponse', './model/CreateJobResponseData', './model/GetReportPath', './model/GetReportPathData', './model/JobDetails', './model/JobDetailsData', './model/JobList', './model/JobStatus', './model/JobStatusData', './model/Jobdata', './api/CancelJobApi', './api/CreateJobApi', './api/GetReportPathApi', './api/JobDetailsApi', './api/JobStatusApi'], factory);
+    define(['ApiClient', 'model/CancelJobResponse', 'model/CancelJobResponseData', 'model/CreateJobResponse', 'model/CreateJobResponseData', 'model/GetReportPath', 'model/GetReportPathData', 'model/JobDetails', 'model/JobDetailsData', 'model/JobList', 'model/JobStatus', 'model/JobStatusData', 'model/Jobdata', 'api/CancelJobApi', 'api/CreateJobApi', 'api/GetReportPathApi', 'api/JobDetailsApi', 'api/JobStatusApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('./ApiClient'), require('./model/CancelJobResponse'), require('./model/CancelJobResponseData'), require('./model/CreateJobResponse'), require('./model/CreateJobResponseData'), require('./model/GetReportPath'), require('./model/GetReportPathData'), require('./model/JobDetails'), require('./model/JobDetailsData'), require('./model/JobList'), require('./model/JobStatus'), require('./model/JobStatusData'), require('./model/Jobdata'), require('./api/CancelJobApi'), require('./api/CreateJobApi'), require('./api/GetReportPathApi'), require('./api/JobDetailsApi'), require('./api/JobStatusApi'));
@@ -15,7 +15,7 @@
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
    * <pre>
-   * var PulsarApi = require('./index'); // See note below*.
+   * var PulsarApi = require('index'); // See note below*.
    * var xxxSvc = new PulsarApi.XxxApi(); // Allocate the API class we're going to use.
    * var yyyModel = new PulsarApi.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
@@ -23,8 +23,8 @@
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
-   * <em>*NOTE: For a top-level AMD script, use require(['./index'], function(){...}) and put the application logic within the
-   * callback function.</em>
+   * <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
+   * and put the application logic within the callback function.</em>
    * </p>
    * <p>
    * A non-AMD browser application (discouraged) might do something like this:
@@ -38,7 +38,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version Beta
+   * @version 1.0.0
    */
   var exports = {
     /**

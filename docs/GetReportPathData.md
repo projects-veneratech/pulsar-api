@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**jobid** | **String** |  | 
 **code** | **Integer** |  | 
-**message** | **String** |  | 
+**jobid** | **String** |  | 
 **reportLink** | **String** |  | [optional] 
+**message** | **String** |  | 
 
 

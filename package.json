@@ -2,6 +2,7 @@
   "name": "pulsar-api",
   "version": "1.0.0",
   "description": "QC your content in AWS Cloud S3 with Pulsar Cloud Service# API",
+  "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"

@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './CancelJobResponseData'], factory);
+    define(['ApiClient', 'model/CancelJobResponseData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./CancelJobResponseData'));
@@ -15,10 +15,13 @@
 }(this, function(ApiClient, CancelJobResponseData) {
   'use strict';
 
+
+
+
   /**
    * The CancelJobResponse model module.
    * @module model/CancelJobResponse
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
@@ -29,9 +32,10 @@
    * @param data
    */
   var exports = function(status, data) {
+    var _this = this;
 
-    this['status'] = status;
-    this['data'] = data;
+    _this['status'] = status;
+    _this['data'] = data;
   };
 
   /**
@@ -42,7 +46,7 @@
    * @return {module:model/CancelJobResponse} The populated <code>CancelJobResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('status')) {
@@ -55,12 +59,10 @@
     return obj;
   }
 
-
   /**
    * @member {Boolean} status
    */
   exports.prototype['status'] = undefined;
-
   /**
    * @member {Array.<module:model/CancelJobResponseData>} data
    */
@@ -71,3 +73,5 @@
 
   return exports;
 }));
+
+

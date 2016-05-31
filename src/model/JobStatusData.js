@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -15,23 +15,27 @@
 }(this, function(ApiClient) {
   'use strict';
 
+
+
+
   /**
    * The JobStatusData model module.
    * @module model/JobStatusData
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
    * Constructs a new <code>JobStatusData</code>.
    * @alias module:model/JobStatusData
    * @class
-   * @param jobid
    * @param code
+   * @param jobid
    */
-  var exports = function(jobid, code) {
+  var exports = function(code, jobid) {
+    var _this = this;
 
-    this['jobid'] = jobid;
-    this['code'] = code;
+    _this['code'] = code;
+    _this['jobid'] = jobid;
 
 
 
@@ -45,20 +49,20 @@
    * @return {module:model/JobStatusData} The populated <code>JobStatusData</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('jobid')) {
-        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
-      }
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'Integer');
       }
-      if (data.hasOwnProperty('jobstatus')) {
-        obj['jobstatus'] = ApiClient.convertToType(data['jobstatus'], 'Integer');
+      if (data.hasOwnProperty('jobid')) {
+        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'Integer');
+      }
+      if (data.hasOwnProperty('jobstatus')) {
+        obj['jobstatus'] = ApiClient.convertToType(data['jobstatus'], 'Integer');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -67,28 +71,23 @@
     return obj;
   }
 
-
-  /**
-   * @member {String} jobid
-   */
-  exports.prototype['jobid'] = undefined;
-
   /**
    * @member {Integer} code
    */
   exports.prototype['code'] = undefined;
-
   /**
-   * @member {Integer} jobstatus
+   * @member {String} jobid
    */
-  exports.prototype['jobstatus'] = undefined;
-
+  exports.prototype['jobid'] = undefined;
   /**
    * 1 means completed, 2 means running, 3 means waiting/queued
    * @member {Integer} state
    */
   exports.prototype['state'] = undefined;
-
+  /**
+   * @member {Integer} jobstatus
+   */
+  exports.prototype['jobstatus'] = undefined;
   /**
    * @member {String} message
    */
@@ -99,3 +98,5 @@
 
   return exports;
 }));
+
+

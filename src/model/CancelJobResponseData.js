@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -15,25 +15,29 @@
 }(this, function(ApiClient) {
   'use strict';
 
+
+
+
   /**
    * The CancelJobResponseData model module.
    * @module model/CancelJobResponseData
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
    * Constructs a new <code>CancelJobResponseData</code>.
    * @alias module:model/CancelJobResponseData
    * @class
-   * @param jobid
    * @param code
+   * @param jobid
    * @param message
    */
-  var exports = function(jobid, code, message) {
+  var exports = function(code, jobid, message) {
+    var _this = this;
 
-    this['jobid'] = jobid;
-    this['code'] = code;
-    this['message'] = message;
+    _this['code'] = code;
+    _this['jobid'] = jobid;
+    _this['message'] = message;
   };
 
   /**
@@ -44,14 +48,14 @@
    * @return {module:model/CancelJobResponseData} The populated <code>CancelJobResponseData</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('jobid')) {
-        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
-      }
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'Integer');
+      }
+      if (data.hasOwnProperty('jobid')) {
+        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -60,17 +64,14 @@
     return obj;
   }
 
-
-  /**
-   * @member {String} jobid
-   */
-  exports.prototype['jobid'] = undefined;
-
   /**
    * @member {Integer} code
    */
   exports.prototype['code'] = undefined;
-
+  /**
+   * @member {String} jobid
+   */
+  exports.prototype['jobid'] = undefined;
   /**
    * @member {String} message
    */
@@ -81,3 +82,5 @@
 
   return exports;
 }));
+
+

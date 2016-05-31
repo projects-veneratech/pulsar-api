@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -15,10 +15,13 @@
 }(this, function(ApiClient) {
   'use strict';
 
+
+
+
   /**
    * The CreateJobResponseData model module.
    * @module model/CreateJobResponseData
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
@@ -29,10 +32,11 @@
    * @param message
    */
   var exports = function(code, message) {
+    var _this = this;
 
+    _this['code'] = code;
 
-    this['code'] = code;
-    this['message'] = message;
+    _this['message'] = message;
   };
 
   /**
@@ -43,14 +47,14 @@
    * @return {module:model/CreateJobResponseData} The populated <code>CreateJobResponseData</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('jobid')) {
-        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
-      }
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'Integer');
+      }
+      if (data.hasOwnProperty('jobid')) {
+        obj['jobid'] = ApiClient.convertToType(data['jobid'], 'String');
       }
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -59,17 +63,14 @@
     return obj;
   }
 
-
-  /**
-   * @member {String} jobid
-   */
-  exports.prototype['jobid'] = undefined;
-
   /**
    * @member {Integer} code
    */
   exports.prototype['code'] = undefined;
-
+  /**
+   * @member {String} jobid
+   */
+  exports.prototype['jobid'] = undefined;
   /**
    * @member {String} message
    */
@@ -80,3 +81,5 @@
 
   return exports;
 }));
+
+

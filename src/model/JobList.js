@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -15,10 +15,13 @@
 }(this, function(ApiClient) {
   'use strict';
 
+
+
+
   /**
    * The JobList model module.
    * @module model/JobList
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
@@ -29,8 +32,9 @@
    * @param jobIdList
    */
   var exports = function(jobIdList) {
+    var _this = this;
 
-    this['job_id_list'] = jobIdList;
+    _this['job_id_list'] = jobIdList;
   };
 
   /**
@@ -41,7 +45,7 @@
    * @return {module:model/JobList} The populated <code>JobList</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('job_id_list')) {
@@ -50,7 +54,6 @@
     }
     return obj;
   }
-
 
   /**
    * @member {String} job_id_list
@@ -62,3 +65,5 @@
 
   return exports;
 }));
+
+

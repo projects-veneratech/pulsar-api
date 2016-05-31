@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/CancelJobResponse', '../model/JobList'], factory);
+    define(['ApiClient', 'model/CancelJobResponse', 'model/JobList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('../model/CancelJobResponse'), require('../model/JobList'));
@@ -18,15 +18,15 @@
   /**
    * CancelJob service.
    * @module api/CancelJobApi
-   * @version Beta
+   * @version 1.0.0
    */
 
   /**
    * Constructs a new CancelJobApi. 
    * @alias module:api/CancelJobApi
    * @class
-   * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
-   * if unspecified.
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
